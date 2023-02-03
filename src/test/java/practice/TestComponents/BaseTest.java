@@ -59,7 +59,7 @@ public class BaseTest {
 		else if(browserName.equalsIgnoreCase("chromeheadless")) {
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
-			options.addArguments("--no-sandbox", "--headless", "--window-size=1440,900", "--disable-dev-shm-usage", "--disable-gpu");
+			options.addArguments("--no-sandbox", "--headless", "--proxy-server='direct://'", "--proxy-bypass-list=*", "--window-size=1440,900", "--disable-dev-shm-usage", "--disable-gpu");
 			//System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
 			driver = new ChromeDriver(options);
 			driver.manage().window().setSize(new Dimension(1440,900));
