@@ -59,7 +59,7 @@ public class BaseTest {
 		else if(browserName.equalsIgnoreCase("chromeheadless")) {
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
-			options.addArguments("headless");
+			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080","--ignore-certificate-errors","--no-sandbox", "--disable-dev-shm-usage");
 			//System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
 			driver = new ChromeDriver(options);
 			driver.manage().window().setSize(new Dimension(1440,900));
